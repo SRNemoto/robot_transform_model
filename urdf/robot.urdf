@@ -40,7 +40,7 @@
         </visual>
         
         <collision>
-            <<origin xyz=".2978 -.1450 1.8451" rpy="-1.1760 .6313 -1.9377" />
+            <origin xyz=".2978 -.1450 1.8451" rpy="-1.1760 .6313 -1.9377" />
             <geometry>
                 <box size =".062 .062 .087"/>
             </geometry>
@@ -67,14 +67,14 @@
         <visual>
             <origin xyz=".2325 .0001 1.9201" rpy=".2325 -.0001 1.9201" />
             <geometry>
-                <cylinder radius=".052" length=".072/>
+                <cylinder radius=".052" length=".072"/>
             </geometry>
         </visual>
         
         <collision>
             <origin xyz=".2325 .0001 1.9201" rpy=".2325 -.0001 1.9201" />
             <geometry>
-                <cylinder radius=".052" length=".072/>
+                <cylinder radius=".052" length=".072"/>
             </geometry>
         </collision>
     </link>
