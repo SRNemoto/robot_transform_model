@@ -3,14 +3,15 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size =".94 .78 1.98"/>
+                <box size =".94 .78 .198" />
+                <!-- box size =".55 .78 .198" -->
             </geometry>
         </visual>
         
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <box size =".94 .78 1.98"/>
+                <box size =".94 .78 .198"/>
             </geometry>
         </collision>
     </link>
@@ -65,16 +66,64 @@
 
     <link name="laser_horiz">
         <visual>
-            <origin xyz=".2325 .0001 1.9201" rpy=".2325 -.0001 1.9201" />
+            <origin xyz=".2325 .0001 1.9201" rpy="-.0012068 .114646 -.0015308" />
             <geometry>
                 <cylinder radius=".052" length=".072"/>
             </geometry>
         </visual>
         
         <collision>
-            <origin xyz=".2325 .0001 1.9201" rpy=".2325 -.0001 1.9201" />
+            <origin xyz=".2325 .0001 1.9201" rpy="-.0012068 .114646 -.0015308" />
             <geometry>
                 <cylinder radius=".052" length=".072"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="wheel_left">
+        <visual>
+            <origin xyz="-.1 .4 0.0" rpy="-1.57079 0 0" />
+            <geometry>
+                <cylinder radius=".2" length=".05"/>
+            </geometry>
+        </visual>
+        
+        <collision>
+            <origin xyz="-.1 .4 0.0" rpy="-1.57079 0 0" />
+            <geometry>
+                <cylinder radius=".2" length=".05"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="wheel_right">
+        <visual>
+            <origin xyz="-.1 -.4 0.0" rpy="-1.57079 0 0" />
+            <geometry>
+                <cylinder radius=".2" length=".05"/>
+            </geometry>
+        </visual>
+        
+        <collision>
+            <origin xyz="-.1 -.4 0.0" rpy="-1.57079 0 0" />
+            <geometry>
+                <cylinder radius=".2" length=".05"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="wheel_center">
+        <visual>
+            <origin xyz=".1 0 0" rpy="-1.57079 0 0" />
+            <geometry>
+                <cylinder radius=".15" length=".05"/>
+            </geometry>
+        </visual>
+        
+        <collision>
+            <origin xyz=".1 0 0" rpy="-1.57079 0 0" />
+            <geometry>
+                <cylinder radius=".15" length=".05"/>
             </geometry>
         </collision>
     </link>
@@ -101,5 +150,23 @@
         <parent link="base"/>
         <child link="laser_horiz"/>
         <origin xyz=".2325 .0001 1.9201" rpy=".2325 -.0001 1.9201" />
-    </joint>    
+    </joint>
+
+    <joint name="base_wheel_left_joint" type="fixed">
+        <parent link="base"/>
+        <child link="wheel_left"/>
+        <origin xyz="-.1 .4 0.0" rpy="-1.57079 0 0" />
+    </joint> 
+
+    <joint name="base_wheel_right_joint" type="fixed">
+        <parent link="base"/>
+        <child link="wheel_right"/>
+        <origin xyz="-.1 -.4 0.0" rpy="-1.57079 0 0" />
+    </joint> 
+
+    <joint name="base_wheel_center_joint" type="fixed">
+        <parent link="base"/>
+        <child link="wheel_center"/>
+        <origin xyz=".1 0.0 0.0" rpy="-1.57079 0 0" />
+    </joint> 
 </robot>
