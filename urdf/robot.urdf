@@ -152,19 +152,19 @@
         <origin xyz=".2325 .0001 1.9201" rpy=".2325 -.0001 1.9201" />
     </joint>
 
-    <joint name="base_wheel_left_joint" type="fixed">
+    <joint name="base_wheel_left_joint" type="continuous">
         <parent link="base"/>
         <child link="wheel_left"/>
         <origin xyz="-.1 .4 0.0" rpy="-1.57079 0 0" />
     </joint> 
 
-    <joint name="base_wheel_right_joint" type="fixed">
+    <joint name="base_wheel_right_joint" type="continuous">
         <parent link="base"/>
         <child link="wheel_right"/>
         <origin xyz="-.1 -.4 0.0" rpy="-1.57079 0 0" />
     </joint> 
 
-    <joint name="base_wheel_center_joint" type="fixed">
+    <joint name="base_wheel_center_joint" type="continuous">
         <parent link="base"/>
         <child link="wheel_center"/>
         <origin xyz=".1 0.0 0.0" rpy="-1.57079 0 0" />
