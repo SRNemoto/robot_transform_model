@@ -18,9 +18,10 @@ Author: Shota Nemoto (srn24@case.edu)
     2. /tf
     3. /tf_static
     
-- Video link: https://drive.google.com/file/d/1JJVrh-lTwBEgGVutSccY8c9E9HNOZP0t/view?usp=sharing
-    Above is a Google Drive link. You can download the video at this link as long as you
+- Above is a Google Drive link. You can download the video at this link as long as you
     are logged in with a Case google account.
+    - Video link: https://drive.google.com/file/d/1JJVrh-lTwBEgGVutSccY8c9E9HNOZP0t/view?usp=sharing
+    
 
 ## Notes
 - In the launch file, the use_xacro argument doesn't actually run the xacro module on 
