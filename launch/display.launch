@@ -1,15 +1,16 @@
 <launch>
     <arg name="use_xacro" default="false" />
     <arg name="GUI" default="true" />
-    <arg if="$(arg use_xacro)" name="filename" default="robot.xacro" />
+    <arg if="$(arg use_xacro)" name="filename" default="urdf_from_xacro.urdf" />
     <arg unless="$(arg use_xacro)" name="filename" default="robot.urdf" />
     <arg name="file" default="$(find robot_transform_model)/urdf/$(arg filename)" />
-    <param if="$(arg use_xacro)" name="robot_description" command="$(find xacro)/xacro.py --inorder $(arg file)" />
+    <!--param name="robot_description" command="rosrun xacro xacro $(arg file)" -->
     <param else="$(arg use_xacro)" name="robot_description" textfile="$(arg file)" />
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_transform_model)/config/config.rviz" required="true" />
+    <node pkg="xacro" type="xacro" name="xacro" args="--inorder $(arg file)" />
     <group if="$(arg GUI)">
         <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
         <param name="use_gui" value="true" />
     </group>
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_transform_model)/config/config.rviz" required="true" />
 </launch>
